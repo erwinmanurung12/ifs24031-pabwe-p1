@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Panduan lengkap deploy aplikasi web menggunakan Docker dan NGINX di server sendiri.">
+<title>Blog Detail - How to Deploy a Web Application Using Docker and NGINX</title>
+</head>
+<body>
+
+<nav>
+<a href="index.html">IMDb Top 3 Movies</a> |
+<a href="blog.html">Dev Blogs</a> |
+<a href="form.html">Form Daftar Akun</a> |
+<a href="cv.html">Curriculum Vitae</a>
+</nav>
+
+<main>
+
+<hr>
+
+<img src="https://picsum.photos/id/180/1200/400" width="100%" alt="Blog Cover">
+
+<p>
+  <img src="https://picsum.photos/id/177/32/32" width="32" height="32" alt="Vishnu Satheesh">
+  <span><strong>Vishnu Satheesh</strong></span>&nbsp;&nbsp;
+  <span>May 31</span>
+</p>
+
+<h1>How to Deploy a Web Application Using Docker and NGINX on Your Own Server</h1>
+
+<hr>
+
+<p>
+Menjalankan aplikasi web di server sendiri sering terasa merepotkan karena perbedaan environment antara laptop pengembang dan server produksi. Docker menyelesaikan masalah ini dengan cara mengemas aplikasi beserta seluruh dependensinya ke dalam sebuah container yang dapat dijalankan secara konsisten di mana saja, sementara NGINX berperan sebagai reverse proxy yang menangani lalu lintas HTTP menuju aplikasi tersebut.
+</p>
+
+<p>
+<strong>Step 1: Setup Docker</strong><br>
+Langkah pertama adalah menginstal Docker pada server, lalu memastikan layanan Docker berjalan dengan baik. Selanjutnya, buat sebuah Dockerfile pada root proyek yang mendefinisikan base image, dependensi, dan perintah untuk menjalankan aplikasi. Dockerfile ini menjadi cetak biru bagaimana image aplikasi akan dibangun.
+</p>
+
+<p>
+<strong>Step 2: Build and Run the Docker Container</strong><br>
+Setelah Dockerfile siap, gunakan perintah build untuk membuat image dari Dockerfile tersebut, kemudian jalankan container dari image itu dengan mapping port yang sesuai. Setelah container berjalan, konfigurasikan NGINX sebagai reverse proxy yang meneruskan permintaan dari port 80 ke port aplikasi di dalam container, sehingga aplikasi dapat diakses melalui domain atau IP server tanpa perlu menyebutkan port secara eksplisit.
+</p>
+
+<p>
+<strong>Conclusion</strong><br>
+Dengan menggabungkan Docker dan NGINX, proses deployment menjadi lebih rapi, mudah direplikasi, dan lebih aman karena aplikasi berjalan terisolasi di dalam container. Pendekatan ini sangat cocok digunakan baik untuk proyek kecil maupun aplikasi produksi yang membutuhkan skalabilitas di kemudian hari.
+</p>
+
+<hr>
+
+<p>
+  <img src="https://picsum.photos/id/64/32/32" width="32" height="32" alt="Your profile">
+</p>
+<textarea rows="3" placeholder="Add to the discussion"></textarea>
+
+</main>
+
+</body>
+</html>
